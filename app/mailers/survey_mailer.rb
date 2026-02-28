@@ -88,7 +88,7 @@ class SurveyMailer < ApplicationMailer
   end
 
   def paragraphify(text)
-    # Handles both Windows and Unix line breaks, and splits on blank lines (i.e. two consecutive line breaks)
+    # Handles both Windows and Unix line breaks
     text.split(/\r?\n\r?\n/)
   end
 end
