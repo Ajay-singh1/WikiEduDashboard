@@ -112,7 +112,8 @@ module SurveysHelper
       load_answer_group_and_user
     end
 
-    return { question_group: @question_group,
+    return { 
+      question_group: @question_group,
       answer_group_builder: @answer_group_builder,
       question_group_index: index,
       surveys_question_group:,

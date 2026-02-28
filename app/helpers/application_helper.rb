@@ -65,10 +65,12 @@ module ApplicationHelper
 
   def body_class(request)
     base_path = request.path.split('/')[1]
-    return 'course-page' if base_path == 'courses'
-    return 'campaign-path' if base_path == 'campaigns'
-    survey_paths = %w[survey surveys rapidfire]
-    return 'survey-page' if survey_paths.include?(base_path)
-    return 'fixed-nav'
+    {
+      'courses' => 'course-page',
+      'campaigns' => 'campaign-path',
+      'survey' => 'survey-page',
+      'surveys' => 'survey-page',
+      'rapidfire' => 'survey-page'
+    }[base_path] || 'fixed-nav'
   end
 end
